@@ -1,0 +1,285 @@
+<html lang="el" class=""><head>
+
+  <meta charset="UTF-8">
+  <title>𝕸𝖚𝖘𝖎𝖈💕𝕮𝖍𝖔ἱ𝖈𝖊𝖘</title>
+
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <style id="">
+    body {
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 4rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Το εξωτερικό πλαίσιο με καθαρά περιγράμματα για να δουλεύουν πάντα τα κλικ */
+.main-panel {
+    background-color: rgba(0, 255, 255, 0.4); 
+    padding: 6px 20px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    /* Ωοειδές/ελλειψοειδές σχήμα */
+    border-radius: 50px; 
+    
+    /* 1η Γραμμή: Μπλε εσωτερικά (3px) */
+    border: 3px solid #0000ff; 
+    
+    /* 2η Γραμμή: Κόκκινη εξωτερικά (3px) */
+    outline: 3px solid #ff0000; 
+    outline-offset: 0px;
+
+    /* Η αρχική Cyan λάμψη */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Όταν το ποντίκι πάει πάνω στο πλαίσιο, γίνεται Neon Purple (Μοβ) */
+.main-panel:hover {
+    background-color: rgba(128, 0, 128, 0.5); 
+    
+    /* Οι γραμμές 3px Red/Blue παραμένουν σταθερές, αλλάζει μόνο η λάμψη σε Μοβ */
+    box-shadow: 0 0 25px rgba(200, 0, 255, 0.8);
+}
+
+/* Το κουμπί Music Choices */
+button {
+    background: none;
+    border: none;
+    color: #000000; 
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.main-panel:hover button {
+    color: #ffffff;
+}
+
+/* Emoji έντασης */
+.volume-icon {
+    font-size: 1.1rem;
+    display: inline-block;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.main-panel:hover .volume-icon {
+    color: #ffffff;
+}
+
+/* Στυλ για το Volume Slider */
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.2); 
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Το κυκλικό κουμπάκι (thumb) μέσα στο slider */
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #00ffff;
+    box-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-panel:hover .volume-slider::-webkit-slider-thumb {
+    background: #d800ff;
+    box-shadow: 0 0 8px #d800ff, 0 0 15px #d800ff;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #00ffff;
+    box-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-panel:hover .volume-slider::-moz-range-thumb {
+    background: #d800ff;
+    box-shadow: 0 0 8px #d800ff, 0 0 15px #d800ff;
+}
+
+img {
+    -webkit-touch-callout: none;
+    pointer-events: none;
+}
+
+.heart {
+color: #fff;
+font-size: 1em;
+font-family: Arial, sans-serif;
+text-shadow: 0 0 5px #000;
+}
+
+/* Οι καρδιές ξεκινούν σταματημένες */
+.heart, .heart .inner {
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.running, .running .inner {
+    animation-play-state: running !important;
+}
+
+@keyframes hearts-fall{0%{transform:translateY(0)}100%{transform:translateY(110vh)}}
+@keyframes hearts-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}
+
+.heart {
+    position:fixed;
+    top:-10%;
+    z-index:9999;
+    cursor:default;
+    animation-name:hearts-shake;
+    animation-duration:3s;
+    animation-timing-function:ease-in-out
+}
+
+.heart .inner {
+    animation-duration:10s;
+    animation-name:hearts-fall;
+    animation-timing-function:linear
+}
+
+.heart:nth-of-type(0) { left:1%; animation-delay:0s; }
+.heart:nth-of-type(0) .inner { animation-delay:0s; }
+.heart:first-of-type { left:10%; animation-delay:1s; }
+.heart:first-of-type .inner,.heart:nth-of-type(8) .inner { animation-delay:1s; }
+.heart:nth-of-type(2) { left:20%; animation-delay:.5s; }
+.heart:nth-of-type(2) .inner,.heart:nth-of-type(6) .inner { animation-delay:6s; }
+.heart:nth-of-type(3) { left:30%; animation-delay:2s; }
+.heart:nth-of-type(11) .inner,.heart:nth-of-type(3) .inner { animation-delay:4s; }
+.heart:nth-of-type(4) { left:40%; animation-delay:2s; }
+.heart:nth-of-type(10) .inner,.heart:nth-of-type(4) .inner { animation-delay:2s; }
+.heart:nth-of-type(5) { left:50%; animation-delay:3s; }
+.heart:nth-of-type(5) .inner { animation-delay:8s; }
+.heart:nth-of-type(6) { left:60%; animation-delay:2s; }
+.heart:nth-of-type(7) { left:70%; animation-delay:1s; }
+.heart:nth-of-type(7) .inner { animation-delay:2.5s; }
+.heart:nth-of-type(8) { left:80%; animation-delay:0s; }
+.heart:nth-of-type(9) { left:90%; animation-delay:1.5s; }
+.heart:nth-of-type(9) .inner { animation-delay:3s; }
+.heart:nth-of-type(10) { left:25%; animation-delay:0s; }
+.heart:nth-of-type(11) { left:65%; animation-delay:2.5s; }
+  </style>
+</head>
+
+<body>
+
+<div class="main-panel" id="panelContainer">
+    <button id="button">𝕸𝖚𝖘𝖎𝖈💕𝕮𝖍𝖔ἱ𝖈𝖊𝖘</button>
+    <span class="volume-icon">🔊</span>
+    <input type="range" id="volume" class="volume-slider" min="0" max="1" step="0.01" value="0.8">
+</div>
+
+        <div class="hearts" aria-hidden="true" id="maindiv" style="display: block;">
+        <div class="heart"><div class="inner"><img width="45" height="45" alt="" draggable="false"></div></div>
+        <div class="heart"><div class="inner">🧡</div></div>
+        <div class="heart"><div class="inner">❤️</div></div>
+        <div class="heart"><div class="inner"><img width="115" height="115" alt="" draggable="false"></div></div>
+        <div class="heart"><div class="inner"><img width="45" height="45" alt="" draggable="false"></div></div>
+        <div class="heart"><div class="inner"><img width="85" height="85" alt="" draggable="false"></div></div>
+        <div class="heart"><div class="inner">💖</div></div>
+        <div class="heart"><div class="inner"><img width="65" height="65" alt="" draggable="false"></div></div>
+        <div class="heart"><div class="inner">🧡</div></div>
+        <div class="heart"><div class="inner">❤️</div></div>
+        <div class="heart"><div class="inner">💖</div></div>
+        <div class="heart"><div class="inner">❤️</div></div>
+        </div>
+
+<script>
+  (function(){
+    // 1. Αποκωδικοποίηση URLs στην μνήμη
+    const _streamUrl = atob('aHR0cHM6Ly9zdHJlYW0ucmNhc3QubmV0LzIwMDU4Ng=='); 
+    const _imageUrl = atob('aHR0cHM6Ly9pLmliYi5jby94OHFxSjRtYy9pbWFnZS5wbmc=');  
+    
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach(img => img.src = _imageUrl);
+
+    // 2. Λειτουργία Στοιχείων, Ήχου και Volume Slider
+    const btn = document.getElementById('button');
+    const panel = document.getElementById('panelContainer');
+    const volumeSlider = document.getElementById('volume');
+    const hearts = document.querySelectorAll('.heart');
+    const audio = new Audio();
+    
+    audio.volume = volumeSlider.value;
+
+    volumeSlider.addEventListener('input', (e) => {
+        audio.volume = e.target.value;
+    });
+
+    // Αποτροπή έναρξης/παύσης όταν ο χρήστης κουνάει απλώς το slider
+    volumeSlider.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    // Λειτουργία Play/Pause με κλικ στο πάνελ
+    panel.addEventListener('click', () => {
+        // Έλεγχος αν η πρώτη καρδιά έχει την κλάση running
+        const isRunning = hearts[0].classList.contains('running');
+        
+        if (!isRunning) {
+            hearts.forEach(heart => heart.classList.add('running'));
+            audio.src = _streamUrl;
+            audio.play().catch(e => console.log('Playback blocked.'));
+        } else {
+            hearts.forEach(heart => heart.classList.remove('running'));
+            audio.pause();
+            audio.src = '';
+        }
+    });
+
+    // 3. Απόλυτη Προστασία
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('dragstart', e => e.preventDefault());
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.keyCode === 123) { e.preventDefault(); return false; }
+        if (e.ctrlKey && (e.shiftKey && (e.keyCode === 73 || e.keyCode === 74) || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 67 || e.keyCode === 88)) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // 4. Anti-Debugging
+    setInterval(function() {
+        const start = new Date();
+        debugger;
+        const end = new Date();
+        if (end - start > 100) {
+            while (true) {
+                console.log("Security Breach");
+            }
+        }
+    }, 500);
+  })();
+</script>
+</body></html>
